@@ -11,3 +11,4 @@
 10-back to prvious directory
 11-lists as per instructions
 12-file type command
+13-create a symbolic link to /bin/ls named __ls__
