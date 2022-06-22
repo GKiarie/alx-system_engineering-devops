@@ -5,3 +5,5 @@
 4-listmorefiles displys contents including hidden files in long format
 5-listfilesdigitonly displays numerical user n group id, long format
 6-firstdirectory creates a directory
+7-movethatfile 
+
