@@ -7,3 +7,5 @@
 6-firstdirectory creates a directory
 7-movethatfile 
 8-firstdelete
+9-dir deletion
+10-back to prvious directory
