@@ -6,4 +6,4 @@
 5-listfilesdigitonly displays numerical user n group id, long format
 6-firstdirectory creates a directory
 7-movethatfile 
-
+8-firstdelete
