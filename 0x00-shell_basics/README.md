@@ -9,3 +9,4 @@
 8-firstdelete
 9-dir deletion
 10-back to prvious directory
+11-lists as per instructions
