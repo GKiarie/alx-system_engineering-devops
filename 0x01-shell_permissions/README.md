@@ -10,3 +10,7 @@ Shell permissions readme
 8.script that sets the permission to the file hello as follows:Owner: no permission at all,Group: no permission at all,Other users: all the permissions: chmod 007 hello
 9.script that sets the mode of the file hello to -rwxr-x-wx: chmod 753 hello
 10.script that sets the mode of the file hello the same as olleh’s mode.: chmod --reference=olleh hello
+11.
+12.script that creates a directory called my_dir with permissions 751 in the working directoryo.
+13.
+14.script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory: chown vincent:staff *
