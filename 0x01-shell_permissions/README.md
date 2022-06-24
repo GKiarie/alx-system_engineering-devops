@@ -14,3 +14,4 @@ Shell permissions readme
 12.script that creates a directory called my_dir with permissions 751 in the working directoryo.
 13.
 14.script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory: chown vincent:staff *
+15.script that changes the owner and the group owner of _hello to vincent and staff respectively:_hello is in the working directory and it is a symbolic link: chown -h vincent:staff _hello: -h flag ensures that the chown is applied on the link alone, not to the related files too.
