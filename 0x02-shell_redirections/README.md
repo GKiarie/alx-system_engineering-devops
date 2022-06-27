@@ -4,3 +4,4 @@ I/O Redirections and Filters project
 3. Display the content of the /etc/passwd file: cat /etc/passwd
 4. Display the content of /etc/passwd and /etc/hosts
 5. Display the last 10 lines of /etc/passwd: tail -n 10 /etc/passwd
+6. Display the first 10 lines of /etc/passwd: head -n 10 /etc/passwd
