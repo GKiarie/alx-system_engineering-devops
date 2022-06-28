@@ -11,3 +11,5 @@ shell variables project
 10. script that prints the result of POWER divided by DIVIDE, followed by a new line: echo $((POWER/DIVIDE)) | cat -e
 11. cript that displays the result of BREATH to the power LOVE: echo $((BREATH**LOVE))
 12. script that converts a number from base 2 to base 10: $((2#10100111001))
+13. 
+14. prints a number with two decimal places, followed by a new line: printf "%.2f\n" $NUM
