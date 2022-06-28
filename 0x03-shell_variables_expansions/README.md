@@ -7,3 +7,4 @@ shell variables project
 6. script that lists all local variables and environment variables, and functions: set
 7. script that creates a new local variable: BEST="School"
 8. script that creates a new global variable: export BEST="School"
+9. script that prints the result of the addition of 128 with the value stored in the environment variable TRUEKNOWLEDGE, followed by a new line: echo $((128 + $TRUEKNOWLEDGE)) | cat -e
