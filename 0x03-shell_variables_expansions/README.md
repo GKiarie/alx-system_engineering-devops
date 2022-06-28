@@ -5,5 +5,4 @@ shell variables project
 4. script that counts the number of directories in the PATH:
 5. script that lists environment variables: printenv
 6. script that lists all local variables and environment variables, and functions: set
-
-
+7. script that creates a new local variable: BEST="School"
