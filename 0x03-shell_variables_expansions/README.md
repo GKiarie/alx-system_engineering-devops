@@ -6,3 +6,4 @@ shell variables project
 5. script that lists environment variables: printenv
 6. script that lists all local variables and environment variables, and functions: set
 7. script that creates a new local variable: BEST="School"
+8. script that creates a new global variable: export BEST="School"
