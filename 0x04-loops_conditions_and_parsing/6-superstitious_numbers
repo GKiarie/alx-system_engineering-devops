@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script is displaying number 1 to 20
+# Displays 4 and then 'bad luck from china' for 4th iter
+# Displays 9 then 'bad luck from Japan' for 9th iter
+# Displays 17 then 'bad luck from italy' for 17th iter
+
+i="1"
+
+while [ $i -le 20 ]
+do
+    if [ $i -eq 4 ] ; then
+	echo $i
+	echo "bad luck from China"
+    elif [ $i -eq 8 ] ; then
+	echo $i
+	echo "bad luck from Japan"
+    elif [ $i -eq 17 ] ; then
+	echo $i
+	echo "bad luck from Italy"
+    else
+	echo $i
+    fi
+    i=$((i+1))
+done
