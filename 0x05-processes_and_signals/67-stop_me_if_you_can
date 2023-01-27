@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script that kills a specific process
+#+ 7-highlander
+#+ Cannot use kill or killall
+
+pkill -f "7-highlander"
