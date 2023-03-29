@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Starting Apache in a container
+
+sudo docker exec -ti a33c0e098ae3 /bin/bash
+
+sudo service apache2 start
