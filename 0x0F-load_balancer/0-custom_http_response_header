@@ -25,4 +25,4 @@ HOSTNAME=$(hostname)
 # Adding specified custom header 
 sudo sed -i "/^http {/a \    add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 
-sudo service nginx start
+sudo service nginx restart
