@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+# script to configure web-02 to be identical to web-01
+# Place our web servers behind a load balancer
+# Add a custom Nginx response header
+# custom HTTP header must be X-Served-By
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# write hello world in index file
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# redirection for our website
+sudo sed -i '/server_name _;/a \	location /redirect_me {\n		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n	}' /etc/nginx/sites-available/default
+
+# Create 404 page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+
+# Configure Nginx to use the custom 404 page
+sudo sed -i '/server_name _;/a \        error_page 404 /custom_404.html;\n        location = /custom_404.html {\n                internal;\n        }' /etc/nginx/sites-available/default
+
+# Variable to store the hostname of the server
+HOSTNAME=$(hostname)
+
+# Adding specified custom header 
+sudo sed -i "/^http {/a \    add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+
+sudo service nginx start
