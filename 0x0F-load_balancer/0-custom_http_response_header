@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # script to configure web-02 to be identical to web-01
 # Place our web servers behind a load balancer
 # Add a custom Nginx response header
