@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Get cause of Nginx not listening on port 80
+# Removed default in site enabled
+# Create symbolic link btn default sites-available and new
+# default in sites enabled
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
