@@ -6,7 +6,7 @@ sub_domain="$2"
 
 display_info() {
 	sub_domain="$2"
-	local record_type="$(dig "$sub_domain.$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $4}')"
+	local record_type="$(dig "$sub_domain.$domain" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
 	local destination="$(dig +short "$sub_domain.$domain")"
 	echo "The subdomain $sub_domain is a $record_type record and points to $destination"
 }
