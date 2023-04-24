@@ -19,4 +19,4 @@ if __name__ == "__main__":
     with open(file_name, 'w') as csvfile:
         for todo in todos:
             csvfile.write('"{}","{}","{}","{}"\n'.format(
-                user_id, user["name"], todo["completed"], todo["title"]))
+                user_id, user["username"], todo["completed"], todo["title"]))
