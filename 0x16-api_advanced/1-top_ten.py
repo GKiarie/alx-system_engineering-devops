@@ -15,10 +15,9 @@ def top_ten(subreddit):
                     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61\
                     Safari/537.36 Brave/94.1.23.1 Chrome/94.0.4606.61'
                     }
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot/.json?limit=10".format(subreddit)
     response = requests.get(url, headers=headers,
                             allow_redirects=False)
-    print(response)
     if response.status_code == 404:
         print(None)
         return
