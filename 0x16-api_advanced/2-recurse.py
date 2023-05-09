@@ -5,7 +5,7 @@ and returns a list containing the titles of all hot articles
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=[], after=None, count=0):
     """Ftn that returns a list containing
     all hot articles
     """
@@ -16,20 +16,21 @@ def recurse(subreddit, hot_list=[], after=None):
                     }
     params = {
             "limit": 50,
-            "after": after
+            "after": after,
+            "count": count
             }
     response = requests.get(f"https://www.reddit.com/r/{subreddit}/hot.json",
                             headers=headers, params=params,
                             allow_redirects=False)
+    if response.status_code == 404:
+        return None
 
-    if response.status_code == 200:
-        response = response.json()['data']
-        after = response['after']
-        response = response['children']
+    results = response.json().get("data")
+    after = results.get("after")
+    count = count + results.get("dist")
+    for child in results.get("children"):
+        hot_list.append(child.get("data").get("title"))
 
-        for post in response:
-            hot_list.append(post['data']['title'])
-        if after is not None:
-            recurse(subreddit, hot_list, after)
-        return hot_list
-    return None
+    if after is not None:
+        return recurse(subreddit, hot_list, after, count)
+    return hot_list
