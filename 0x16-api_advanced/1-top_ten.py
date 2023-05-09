@@ -7,7 +7,7 @@ import requests
 
 def top_ten(subreddit):
     """
-    ftn that prints the top ten posts
+    function that prints the top ten hot posts
     listed for a given subreddit
     """
     headers = {
@@ -15,11 +15,11 @@ def top_ten(subreddit):
                     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61\
                     Safari/537.36 Brave/94.1.23.1 Chrome/94.0.4606.61'
                     }
-    response = requests.get("https://www.reddit.com/r/{}/about.json?limit=10".
-                            format(subreddit), headers=headers,
-                            allow_redirects=False)
+    response = requests.get(f"https://www.reddit.com/r/{subreddit}/hot.json?\
+                            limit=10", headers=headers, allow_redirects=False)
     if response.status_code == 404:
-        return 0
+        print(None)
+        return
     else:
         results = response.json()
         for post in results['data']['children']:
