@@ -14,8 +14,9 @@ def number_of_subscribers(subreddit):
                     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61\
                     Safari/537.36 Brave/94.1.23.1 Chrome/94.0.4606.61'
                     }
-    response = requests.get("https://www.reddit.com/r/{}/about.json".format(subreddit),\
-            headers=headers, allow_redirects=False)
+    response = requests.get("https://www.reddit.com/r/{}/about.json".
+                            format(subreddit), headers=headers,
+                            allow_redirects=False)
     if response.status_code == 404:
         return 0
     else:
