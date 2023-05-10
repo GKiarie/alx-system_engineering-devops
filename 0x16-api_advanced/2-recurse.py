@@ -23,7 +23,7 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
 
     # make the API request
     response = requests.get(
-        f"https://www.reddit.com/r/{subreddit}/hot.json",
+        "https://www.reddit.com/r/{}/hot.json".format(subreddit),
         headers=headers, params=params,
         allow_redirects=False
     )
