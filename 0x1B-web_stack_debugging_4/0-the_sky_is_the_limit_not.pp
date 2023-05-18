@@ -8,6 +8,6 @@ exec {'upscale nginx traffic':
 
 # restart nginx
 exec { 'restart nginx':
-  command => 'service nginx restart',
+  command => 'nginx restart',
   path    => '/etc/init.d/'
 }
